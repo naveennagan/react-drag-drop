@@ -4,6 +4,7 @@ import { ReactDraggable } from "../lib/ReactDraggable";
 import { ReactDropArea } from "../lib/ReactDropArea";
 import { Area } from "./Area";
 import { Rectangle } from "./Rectangle";
+import { Circle } from "./Circle";
 
 export const Home = ()=>{
 
@@ -13,7 +14,8 @@ export const Home = ()=>{
        <div className="home-container">
            
             {/* <Area />
-            <Rectangle /> */}
+            <Rectangle /> 
+            <Circle /> */}
 
            <ReactDropArea dropContext = {ReactDropDropContext}>
               <Area />
@@ -22,7 +24,10 @@ export const Home = ()=>{
            <ReactDraggable targetContext = {ReactDropDropContext}>
               <Rectangle />
            </ReactDraggable> 
-           
+
+           <ReactDraggable targetContext = {ReactDropDropContext}>
+              <Circle />
+           </ReactDraggable> 
 
         </div>
     )

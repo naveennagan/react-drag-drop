@@ -30,7 +30,7 @@
 
 .home-container {
   width: 100%;
-  height: 800px;
+  height: 100vh;
   padding: 10px;
   background-color: aqua;
   display: flex;
@@ -39,8 +39,8 @@
 }
 
 .area {
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 800px;
   background-color: orange;
 }
 
@@ -49,6 +49,14 @@
   height: 100px;
   background-color: black;
   color: paleturquoise;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  color: paleturquoise;
+  border-radius: 50%;
 }
 
 .draggable-item {

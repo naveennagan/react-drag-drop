@@ -20,18 +20,34 @@ export const ReactDropArea = (props)=>{
         var dragX = event.pageX;
 
         var dragY = event.pageY;
-        
-        const droppedItemChidProps = dropContext[event.dataTransfer.getData(targetId)];
 
-        const droppedItemProps = {
-            droppedItemChidProps,
-            dragX,
-            dragY
+        const eventType = event.dataTransfer.getData(targetId);
+
+        if(eventType.includes("move")){
+
+            var index = dropContext[eventType];
+            
+            droppedElementsProps[index].dragX = dragX;
+
+            droppedElementsProps[index].dragY = dragY;
+
+            setDroppedElementsProps([...droppedElementsProps]);
+
         }
-                
-        droppedElementsProps = droppedElementsProps.concat(droppedItemProps);
+        else if(eventType.includes("copy")){
+        
+            let droppedItemChidProps = dropContext[eventType];
 
-        setDroppedElementsProps(droppedElementsProps);
+            let droppedItemProps = {
+                droppedItemChidProps,
+                dragX,
+                dragY
+            }
+                    
+            droppedElementsProps = droppedElementsProps.concat(droppedItemProps);
+
+            setDroppedElementsProps(droppedElementsProps);
+        }
     };
 
     const onDragOver = (event) => {
@@ -42,9 +58,10 @@ export const ReactDropArea = (props)=>{
         console.log(droppedElementsProps);
         return <>
             {
-                droppedElementsProps && droppedElementsProps.length > 0 && droppedElementsProps.map((droppedElementProps)=>{
-                    return <ReactDroppedItem dragX={droppedElementProps.dragX} 
-                    dragY={droppedElementProps.dragY} droppedElementProps={droppedElementProps.droppedItemChidProps} />;
+                droppedElementsProps && droppedElementsProps.length > 0 && droppedElementsProps.map((droppedElementProps, index)=>{
+                    return <ReactDroppedItem index={index} dragX={droppedElementProps.dragX} 
+                    dragY={droppedElementProps.dragY} droppedElementProps={droppedElementProps.droppedItemChidProps} 
+                    dropContext={dropContext} />;
                 })
             }
         </>

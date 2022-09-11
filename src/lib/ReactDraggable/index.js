@@ -12,7 +12,7 @@ export const ReactDraggable = (props)=>{
 
     const onDragStart = (event) => {
         
-        const newPropReference =  new Date().toTimeString();
+        const newPropReference =  "copy";
 
         targetContext[newPropReference] = props.children;
 

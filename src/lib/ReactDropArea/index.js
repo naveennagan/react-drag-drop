@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ReactDroppedItem } from "../ReactDroppedItem";
+
+import ReactDroppedItem from "../ReactDroppedItem";
 
 const ReactDropArea = (props)=>{
 

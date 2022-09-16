@@ -26,7 +26,7 @@ const ReactDraggable = (props)=>{
         "display": "inline-block"
     }
 
-    return <div className="draggable-item" draggable="true" onDragStart={onDragStart} styles={styles}>
+    return <div className="draggable-item" draggable="true" onDragStart={onDragStart} style={{...styles}}>
        {
            React.Children.map(props.children, child => {
                return React.cloneElement(child, {newProps}, null );

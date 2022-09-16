@@ -33,7 +33,6 @@ const ReactDraggable = props => {
   };
 
   const styles = {
-    "overflow": "hidden",
     "height": "fit-content",
     "cursor": "pointer",
     "display": "inline-block"

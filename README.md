@@ -1,10 +1,15 @@
-# Preview
-
+# Demo
 
 
 https://user-images.githubusercontent.com/7764389/190599251-5581e43f-47c7-4e3c-830f-f1cfb2557cc3.mp4
 
-  
+
+# Installation
+
+  ``` 
+    npm i react-drag-drop-tool
+    import { ReactDraggable, createReactDragDropContext, ReactDropArea, ReactDroppedItem } from 'react-drag-drop-tool';
+  ```
 
 # Description
   Library to incorporate drag and drop in react applications.
@@ -16,17 +21,17 @@ https://user-images.githubusercontent.com/7764389/190599251-5581e43f-47c7-4e3c-8
   4) Get the reference to the dropped item by ReactDroppedItem
   5) Refer the sample code here
      
-          const ReactDropDropContext = createReactDragDropContext("drop-area-1");
+          const reactDropDropContext = createReactDragDropContext("drop-area-1");
 
-           <ReactDropArea dropContext = {ReactDropDropContext}>
+           <ReactDropArea dropContext = {reactDropDropContext}>
               <Area />
            </ReactDropArea>     
 
-           <ReactDraggable targetContext = {ReactDropDropContext}>
+           <ReactDraggable targetContext = {reactDropDropContext}>
               <Rectangle />
            </ReactDraggable> 
 
-           <ReactDraggable targetContext = {ReactDropDropContext}>
+           <ReactDraggable targetContext = {reactDropDropContext}>
               <Circle />
            </ReactDraggable>
             

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-import ReactDroppedItem from "../ReactDroppedItem";
+//import ReactDroppedItem from "../ReactDroppedItem";
+
+var ReactDroppedItem = require('../ReactDroppedItem').default;
+
 
 const ReactDropArea = (props)=>{
 
@@ -55,8 +58,15 @@ const ReactDropArea = (props)=>{
         event.preventDefault();
     };
 
+
+    const styles = {
+        "display": "flex",
+        "justifyContent": "space-around",
+        "position": "relative",
+        "height": "fit-content"
+    }
+
     const getDroppedView = ()=>{
-        console.log(droppedElementsProps);
         return <>
             {
                 droppedElementsProps && droppedElementsProps.length > 0 && droppedElementsProps.map((droppedElementProps, index)=>{
@@ -68,8 +78,9 @@ const ReactDropArea = (props)=>{
         </>
     }
     
+    
     return (
-      <div onDrop={onDrop} onDragOver={onDragOver} className="drop-container">
+      <div onDrop={onDrop} onDragOver={onDragOver} className="drop-container" style={styles}>
         {
             React.Children.map(props.children, child => {
                 return React.cloneElement(child, {newProps}, null );

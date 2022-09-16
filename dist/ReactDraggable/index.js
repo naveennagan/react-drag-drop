@@ -26,10 +26,16 @@ const ReactDraggable = props => {
     event.dataTransfer.setData(targetId, newPropReference);
   };
 
+  const styles = {
+    "overflow": "hidden",
+    "height": "fit-content",
+    "cursor": "pointer"
+  };
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "draggable-item",
     draggable: "true",
-    onDragStart: onDragStart
+    onDragStart: onDragStart,
+    styles: styles
   }, _react.default.Children.map(props.children, child => {
     return /*#__PURE__*/_react.default.cloneElement(child, {
       newProps

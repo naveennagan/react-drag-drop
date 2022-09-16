@@ -18,7 +18,15 @@ const ReactDroppedItem = (props) => {
         event.dataTransfer.setData(targetId, "move" );
     }
 
-    return <div className="dropped-item" draggable="true" onDragStart= {onDragStart} style={{left: dragX, top: dragY}} >
+    const styles = {
+        "position": "fixed",
+        "height": "fit-content",
+        "transform": "translate(-50%, -50%)",
+        "cursor": "pointer"
+    }
+
+
+    return <div className="dropped-item" draggable="true" onDragStart= {onDragStart} style={{left: dragX, top: dragY, ...styles}} >
         {
            React.Children.map(droppedElementProps, child => {
                return React.cloneElement(child, {newProps}, null );

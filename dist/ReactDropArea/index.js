@@ -13,11 +13,12 @@ require("core-js/modules/es.string.includes.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _ReactDroppedItem = require("../ReactDroppedItem");
-
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+//import ReactDroppedItem from "../ReactDroppedItem";
+var ReactDroppedItem = require('../ReactDroppedItem').default;
 
 const ReactDropArea = props => {
   const {
@@ -58,10 +59,16 @@ const ReactDropArea = props => {
     event.preventDefault();
   };
 
+  const styles = {
+    "display": "flex",
+    "justifyContent": "space-around",
+    "position": "relative",
+    "height": "fit-content"
+  };
+
   const getDroppedView = () => {
-    console.log(droppedElementsProps);
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, droppedElementsProps && droppedElementsProps.length > 0 && droppedElementsProps.map((droppedElementProps, index) => {
-      return /*#__PURE__*/_react.default.createElement(_ReactDroppedItem.ReactDroppedItem, {
+      return /*#__PURE__*/_react.default.createElement(ReactDroppedItem, {
         index: index,
         dragX: droppedElementProps.dragX,
         dragY: droppedElementProps.dragY,
@@ -74,7 +81,8 @@ const ReactDropArea = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     onDrop: onDrop,
     onDragOver: onDragOver,
-    className: "drop-container"
+    className: "drop-container",
+    style: styles
   }, _react.default.Children.map(props.children, child => {
     return /*#__PURE__*/_react.default.cloneElement(child, {
       newProps

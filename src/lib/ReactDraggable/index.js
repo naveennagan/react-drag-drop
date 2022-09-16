@@ -19,7 +19,13 @@ const ReactDraggable = (props)=>{
         event.dataTransfer.setData(targetId, newPropReference);
     }
     
-    return <div className="draggable-item" draggable="true" onDragStart={onDragStart}>
+    const styles = {
+        "overflow": "hidden",
+        "height": "fit-content",
+        "cursor": "pointer"
+    }
+
+    return <div className="draggable-item" draggable="true" onDragStart={onDragStart} styles={styles}>
        {
            React.Children.map(props.children, child => {
                return React.cloneElement(child, {newProps}, null );

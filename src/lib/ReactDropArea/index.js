@@ -74,7 +74,7 @@ const ReactDropArea = (props)=>{
     
     
     return (
-      <div onDrop={onDrop} onDragOver={onDragOver} className="drop-container" style={{"position": "relative"}}>
+      <div onDrop={onDrop} onDragOver={onDragOver} className="drop-container">
         {
             React.Children.map(props.children, child => {
                 return React.cloneElement(child, {newProps}, null );

@@ -74,10 +74,7 @@ const ReactDropArea = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     onDrop: onDrop,
     onDragOver: onDragOver,
-    className: "drop-container",
-    style: {
-      "position": "relative"
-    }
+    className: "drop-container"
   }, _react.default.Children.map(props.children, child => {
     return /*#__PURE__*/_react.default.cloneElement(child, {
       newProps

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ReactDraggable = (props)=>{
+const ReactDraggable = (props)=>{
 
     const { targetContext } = props;
 
@@ -27,3 +27,5 @@ export const ReactDraggable = (props)=>{
        }
     </div>
 }
+
+export default ReactDraggable;

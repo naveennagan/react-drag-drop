@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ReactDroppedItem = (props) => {
+const ReactDroppedItem = (props) => {
 
     const { droppedElementProps, dropContext, dragX, dragY, index } = props;
 
@@ -14,7 +14,7 @@ export const ReactDroppedItem = (props) => {
     const onDragStart = (event) => {
         
         dropContext["move"] = index;
-        
+
         event.dataTransfer.setData(targetId, "move" );
     }
 
@@ -26,3 +26,5 @@ export const ReactDroppedItem = (props) => {
        }
     </div>
 }
+
+export default ReactDroppedItem;

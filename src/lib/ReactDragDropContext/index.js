@@ -1,5 +1,7 @@
-export const createReactDragDropContext = (targetId)=>{
+ const createReactDragDropContext = (targetId)=>{
     return {
         targetId
     }
 }
+
+export default createReactDragDropContext;

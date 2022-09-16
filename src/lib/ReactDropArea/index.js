@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ReactDroppedItem } from "../ReactDroppedItem";
 
-export const ReactDropArea = (props)=>{
+const ReactDropArea = (props)=>{
 
     const { dropContext } = props;
 
@@ -77,3 +77,5 @@ export const ReactDropArea = (props)=>{
         { droppedElementsProps && droppedElementsProps.length > 0 && getDroppedView()}
     </div>)
 }
+
+export default ReactDropArea;

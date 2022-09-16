@@ -60,7 +60,7 @@ const ReactDropArea = (props)=>{
 
 
     const styles = {
-        "display": "inline-block",
+        "position": "relative",
     }
 
     const getDroppedView = ()=>{

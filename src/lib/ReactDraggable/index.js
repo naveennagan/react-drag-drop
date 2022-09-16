@@ -22,7 +22,8 @@ const ReactDraggable = (props)=>{
     const styles = {
         "overflow": "hidden",
         "height": "fit-content",
-        "cursor": "pointer"
+        "cursor": "pointer",
+        "display": "inline-block"
     }
 
     return <div className="draggable-item" draggable="true" onDragStart={onDragStart} styles={styles}>

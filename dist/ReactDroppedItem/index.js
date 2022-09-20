@@ -21,14 +21,12 @@ const ReactDroppedItem = props => {
     dropContext,
     dragX,
     dragY,
-    index
+    index,
+    uniqueid
   } = props;
   const {
     targetId
   } = dropContext;
-  const newProps = {
-    draggable: true
-  };
 
   const onDragStart = event => {
     dropContext["move"] = index;
@@ -48,11 +46,12 @@ const ReactDroppedItem = props => {
     style: _objectSpread({
       left: dragX,
       top: dragY
-    }, styles)
+    }, styles),
+    uniqueid: uniqueid
   }, _react.default.Children.map(droppedElementProps, child => {
     return /*#__PURE__*/_react.default.cloneElement(child, {
-      newProps
-    }, null);
+      uniqueid
+    });
   }));
 };
 

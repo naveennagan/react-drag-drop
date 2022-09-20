@@ -27,11 +27,11 @@ export const Home = ()=>{
               <Area />
            </ReactDropArea>     
 
-           <ReactDraggable targetContext = {ReactDropDropContext}>
+           <ReactDraggable targetContext = {ReactDropDropContext} uniqueid="rectangle-item">
               <Rectangle />
            </ReactDraggable> 
 
-           <ReactDraggable targetContext = {ReactDropDropContext}>
+           <ReactDraggable targetContext = {ReactDropDropContext} uniqueid="circle-item">
               <Circle />
            </ReactDraggable> 
 

@@ -17,7 +17,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const ReactDraggable = props => {
   const {
-    targetContext
+    targetContext,
+    uniqueid
   } = props;
   const {
     targetId
@@ -29,6 +30,7 @@ const ReactDraggable = props => {
   const onDragStart = event => {
     const newPropReference = "copy";
     targetContext[newPropReference] = props.children;
+    targetContext["uniqueid"] = uniqueid;
     event.dataTransfer.setData(targetId, newPropReference);
   };
 

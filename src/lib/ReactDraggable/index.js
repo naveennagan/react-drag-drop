@@ -2,7 +2,7 @@ import React from "react";
 
 const ReactDraggable = (props)=>{
 
-    const { targetContext } = props;
+    const { targetContext, uniqueid  } = props;
 
     const { targetId } = targetContext;
 
@@ -16,6 +16,8 @@ const ReactDraggable = (props)=>{
 
         targetContext[newPropReference] = props.children;
 
+        targetContext["uniqueid"] = uniqueid;
+
         event.dataTransfer.setData(targetId, newPropReference);
     }
     
@@ -24,6 +26,7 @@ const ReactDraggable = (props)=>{
         "cursor": "pointer",
         "display": "inline-block"
     }
+
 
     return <div className="draggable-item" draggable="true" onDragStart={onDragStart} style={{...styles}}>
        {

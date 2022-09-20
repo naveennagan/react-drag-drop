@@ -42,13 +42,19 @@ const ReactDropArea = (props)=>{
         
             let droppedItemChidProps = dropContext[eventType];
 
+            let uniqueId = "react-dropped-item-id-"+new Date().getTime();
+
             let droppedItemProps = {
                 droppedItemChidProps,
                 dragX,
-                dragY
+                dragY,
+                data : {},
+                uniqueId
             }
                     
             droppedElementsProps = droppedElementsProps.concat(droppedItemProps);
+
+            dropContext.data = droppedElementsProps;
 
             setDroppedElementsProps(droppedElementsProps);
         }

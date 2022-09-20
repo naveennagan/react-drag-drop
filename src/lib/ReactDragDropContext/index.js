@@ -1,6 +1,7 @@
- const createReactDragDropContext = (targetId)=>{
+ let createReactDragDropContext = (targetId)=>{
     return {
-        targetId
+        targetId,
+        data:[]
     }
 }
 

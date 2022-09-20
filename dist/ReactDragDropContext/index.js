@@ -5,9 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-const createReactDragDropContext = targetId => {
+let createReactDragDropContext = targetId => {
   return {
-    targetId
+    targetId,
+    data: []
   };
 };
 
